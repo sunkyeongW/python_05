@@ -36,6 +36,15 @@ span : 일치하는 문자열의 시작과끝 인덱스
 
 findall: 일치하는 모든 것을 리스트 형태로 반환
 
+# http method
+1.get:url로 보내는 방법
+2.post: http의 바디 부분에 담아서 서버로 보내는 방법
+
+
+# selenium
+인터넷 브라우저 컨트롤러
+
+
 
 
 
