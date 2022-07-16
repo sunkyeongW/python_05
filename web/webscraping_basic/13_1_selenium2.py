@@ -2,7 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
 
-browser = webdriver.Chrome("./chromedriver.exe")
+browser = webdriver.Chrome("web\webscraping_basic\chromedriver.exe")
 
 #1. 네이버 이동
 browser.get("http://naver.com")
