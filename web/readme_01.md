@@ -40,12 +40,39 @@ findall: 일치하는 모든 것을 리스트 형태로 반환
 1.get:url로 보내는 방법
 2.post: http의 바디 부분에 담아서 서버로 보내는 방법
 
+# user-agent
+서버에서 권한을 받기위해 받는 자기만의 출입증같은 존재
+
+
+# requests
+주어진 url을 통해 받아온 html 읽어 오기
+res.raise_for_status() 
+동적 웹페이지 x
 
 # selenium
-인터넷 브라우저 컨트롤러
+인터넷 브라우저 컨트롤러(자동화)
+동적 웹페이지
+크롬 버전에 맞는 chromedriver.exe가 반드시 필요
 
+# beautifulsoup
 
+find - 조건에 맞는 첫번째 element
+find_all - 조건에 맞는 모든 element 리스트
+find_next_sibling - 다음 형제 찾기
+find_previous_sibling - 이전 형제 찾기
 
+soup["href"] - 속성
+soup.get_text()- 텍스트
 
+# 이미지 다운로드
+with open("파일명", "wb") as f:
+    f.write(res.content)
 
+# csv 파일로 저장
+import csv
 
+f= open(filename, "w', encoding = "urf-8", newline="")
+
+# headless chrome
+브라우저를 띄우지 않고 동작
+때로는 user-agent 정의 필요

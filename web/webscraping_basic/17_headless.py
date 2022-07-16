@@ -1,18 +1,16 @@
 from selenium import webdriver
 
+options = webdriver.ChromeOptions()
+options.headless = True
+options.add_argument("window-size=1920x1080")
 
-browser = webdriver.Chrome("web\webscraping_basic\chromedriver.exe")
+
+browser = webdriver.Chrome("web\webscraping_basic\chromedriver.exe", options=options)
 browser.maximize_window()
 
 url = "https://play.google.com/store/movies?hl=ko&gl=US"
 
 browser.get(url)
-
-#스크롤 내리기
-#browser.execute_script("window.scrollTo(0,1080)")
-
-#맨 아래로 스크롤 내리기
-browser.execute_script("window.scrollTo(0,document.body.scrollHeight)")
 
 import time
 
@@ -35,6 +33,7 @@ while True:
     prev_height = curr_height
 
 print("스크롤 완료")
+browser.get_screenshot_as_file("google_movie.png")
 
 
 import requests
@@ -71,9 +70,7 @@ for movie in movies:
     print(f"할인 전 금액 : {origin_price}")
     print(f"할인 후 금액 : {price}")
     print("링크 : ", "https://play.google.com" + link)
-    print("-" *100)
+    print("-" *80)
 
 browser.quit()
-
-
 
